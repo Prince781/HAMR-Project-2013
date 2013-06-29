@@ -1,3 +1,10 @@
+/*
+ * echonest api key: WL2G6JXCX8WDOPZLN 
+ * java api client: https://github.com/echonest/jEN
+ * api tutorials: http://developer.echonest.com/tutorial-overview.html
+ * api documentation: http://developer.echonest.com/docs/v4
+ */
+
 import java.io.*;
 import java.util.*;
 import javax.sound.sampled.*;
