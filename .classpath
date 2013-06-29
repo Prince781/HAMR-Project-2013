@@ -3,7 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="lib/jAudio/jAudio.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="file:/Users/iofelben/Computer%20Stuff/Programming/HAMR-Project-2013/lib/jAudio/javadoc/"/>
+			<attribute name="javadoc_location" value="lib/jAudio/javadoc/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/jAudio/lib/jogg-0.0.5.jar"/>
