@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="lib/jAudio/jAudio.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="lib/jAudio/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/jAudio/lib/jogg-0.0.5.jar"/>
+	<classpathentry kind="lib" path="lib/jAudio/lib/jorbis-0.0.12.jar"/>
+	<classpathentry kind="lib" path="lib/jAudio/lib/junit-3.8.2.jar"/>
+	<classpathentry kind="lib" path="lib/jAudio/lib/mp3plugin.jar"/>
+	<classpathentry kind="lib" path="lib/jAudio/lib/tritonus_jorbis-0.3.6.jar"/>
+	<classpathentry kind="lib" path="lib/jAudio/lib/tritonus_remaining-0.3.6.jar"/>
+	<classpathentry kind="lib" path="lib/jAudio/lib/tritonus_share-0.3.6.jar"/>
+	<classpathentry kind="lib" path="lib/jAudio/lib/xerces.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
