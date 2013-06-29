@@ -1,5 +1,4 @@
 import java.io.*;
-import javax.sound.sampled.*;
 import sun.audio.*;
 
 public class CreateGenreFeatureDB {
