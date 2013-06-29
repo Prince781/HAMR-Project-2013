@@ -19,6 +19,7 @@ public class CreateGenreFeatureDB {
 				curSample = new File("genresamples/" + 												//samples folder
 						genres[genreIndex] + "/" + 													//genre folder
 						genres[genreIndex] + "." + String.format("%05d", sampleIndex) + ".au");		//audio file
+				System.out.println("working with " + curSample.getPath());
 				if (!java.nio.file.Files.exists(curSample.toPath())) throw new FileNotFoundException();	//make sure it exists
 				
 				audioStrm = AudioSystem.getAudioInputStream(curSample);								//load .au file
