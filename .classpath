@@ -2,6 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+<<<<<<< HEAD
+=======
 	<classpathentry kind="lib" path="/home/princetonferro/Documents/GitHub/HAMR-Project-2013/lib/jAudio/jAudio.jar"/>
 	<classpathentry kind="lib" path="/home/princetonferro/Documents/GitHub/HAMR-Project-2013/lib/jAudio/lib/jogg-0.0.5.jar"/>
 	<classpathentry kind="lib" path="/home/princetonferro/Documents/GitHub/HAMR-Project-2013/lib/jAudio/lib/jorbis-0.0.12.jar"/>
@@ -11,5 +13,6 @@
 	<classpathentry kind="lib" path="/home/princetonferro/Documents/GitHub/HAMR-Project-2013/lib/jAudio/lib/tritonus_remaining-0.3.6.jar"/>
 	<classpathentry kind="lib" path="/home/princetonferro/Documents/GitHub/HAMR-Project-2013/lib/jAudio/lib/tritonus_share-0.3.6.jar"/>
 	<classpathentry kind="lib" path="/home/princetonferro/Documents/GitHub/HAMR-Project-2013/lib/jAudio/lib/xerces.jar"/>
+>>>>>>> branch 'master' of https://github.com/Prince781/HAMR-Project-2013.git
 	<classpathentry kind="output" path="bin"/>
 </classpath>
