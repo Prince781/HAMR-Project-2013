@@ -1,7 +1,6 @@
 import java.io.*;
 import java.util.*;
 import javax.sound.sampled.*;
-import jAudioFeatureExtractor.jAudioTools.*;
 
 public class CreateGenreFeatureDB {
 	public static final int numGenres = 10, samplesPerGenre = 100;
@@ -10,7 +9,6 @@ public class CreateGenreFeatureDB {
 	public static void main(String[] args) throws Exception{
 		File curSample;
 		AudioInputStream audioStrm;
-		AudioSamples sample;
 		HashMap<String, Double> curSampleFeatures;
 		List<Map<String, Double>> genreAvgFeatures = new ArrayList<Map<String, Double>>();
 		
@@ -23,8 +21,6 @@ public class CreateGenreFeatureDB {
 				if (!java.nio.file.Files.exists(curSample.toPath())) throw new FileNotFoundException();	//make sure it exists
 				
 				audioStrm = AudioSystem.getAudioInputStream(curSample);								//load .au file
-				sample = new AudioSamples(audioStrm, (genres[genreIndex]+sampleIndex), true);		//sample object for feature extraction
-				curSampleFeatures = new FeatureExtraction(sample).getFeatureData();
 			}
 		}
 		
