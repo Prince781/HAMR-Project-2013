@@ -7,21 +7,14 @@ public class GenreRecognizer {
 		System.out.println(compare(jazz, blues));
 		System.out.println(compare(jazz, test));
 		System.out.println(compare(blues, test));
-		
-		
 	}
 	//compares ordered lists of features
 	//must be the same dimension
 	public static double compare(int[] x, int[] y){
 		double val = 0;
-		if(x.length == y.length){
-			for (int w = 0; w < x.length; w++){
-				val = (val+ Math.pow((x[w]-y[w]), 2));
-			}
+		if(x.length == y.length) {
+			for (int w = 0; w < x.length; w++) val += Math.pow((x[w] - y[w]), 2);
 			return Math.sqrt(val);
-		}
-		else{
-			return -1.0;
-		}
+		} else return -1.0;
 	}
 }
