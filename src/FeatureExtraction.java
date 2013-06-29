@@ -1,11 +1,16 @@
-import java.io.*;
-import java.nio.file.*;
-import jAudioFeatureExtractor.*;
+import java.util.HashMap;
+import jAudioFeatureExtractor.jAudioTools.AudioSamples;
+import jAudioFeatureExtractor.AudioFeatures.*;
 
-public class FeatureExtraction {
-	public FeatureExtraction(File file) throws Exception {
-		if (!Files.exists(file.toPath()))
-			throw new Exception();
-		
+public class FeatureExtraction {	
+	BeatHistogram beatHistogram;
+	HashMap<String, Double> curSampleData = new HashMap<String, Double>();
+	public FeatureExtraction(AudioSamples curSample) throws Exception {
+		beatHistogram = new BeatHistogram();
+		beatHistogram.extractFeature(curSample.getSamplesMixedDown(), curSample.getSamplingRateAsDouble(), null);
 	}
+	public HashMap<String, Double> getFeatureData(){
+		return null;
+	}
+	
 }
