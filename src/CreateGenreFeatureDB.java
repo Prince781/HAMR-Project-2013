@@ -1,22 +1,26 @@
-import java.io.File;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
+import java.io.*;
+import javax.sound.sampled.*;
+import sun.audio.*;
 
 public class CreateGenreFeatureDB {
-	public static final int sampleAmount = 100;
-		//the default sample amount within audio file
+	public static final int numGenres = 10, samplesPerGenre = 100;
 	public static final String[] genres = {"blues","classical","country","disco","hiphop","jazz","metal","pop","reggae","rock"};
-	public static void main(String[] args) throws Exception {
-		AudioInputStream audioStrm;
-		int totalFramesRead = 0, bytesPerFrame, numBytes;
-		
-		for(int genreIndex=0;genreIndex<genres.length;genreIndex++) for(int sampleIndex=0;sampleIndex<100;sampleIndex++) {
-			String filepath = "genresamples/" + genres[genreIndex] + "/" + genres[genreIndex] + "." + String.format("%05d", sampleIndex) + ".au";
-			audioStrm = AudioSystem.getAudioInputStream(new File(filepath));
-			bytesPerFrame = audioStrm.getFormat().getFrameSize();
-			//if the audio format has an unspecified frame size, read any amount of bytes
-			if(bytesPerFrame == AudioSystem.NOT_SPECIFIED) bytesPerFrame = 1;
-			byte[] audioBytes = new byte[1024 * bytesPerFrame];
+
+	public static void main(String[] args){		
+		AudioStream audioStrm;
+		String filepath;
+
+		for(int genreIndex = 0; genreIndex < numGenres; genreIndex++) {
+			for(int sampleIndex = 0; sampleIndex < samplesPerGenre; sampleIndex++) {
+				filepath = "genresamples/" + 														//samples folder
+						genres[genreIndex] + "/" + 													//genre folder
+						genres[genreIndex] + "." + String.format("%05d", sampleIndex) + ".au";		//audio file
+				try {
+					audioStrm = new AudioStream(new FileInputStream(filepath));						//load .au file
+				} catch (IOException e) {
+					System.out.println("IO Error with " + filepath);
+				}
+			}
 		}
 	}
 }
