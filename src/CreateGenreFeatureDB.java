@@ -3,6 +3,8 @@
  * java api client: https://github.com/echonest/jEN
  * api tutorials: http://developer.echonest.com/tutorial-overview.html
  * api documentation: http://developer.echonest.com/docs/v4
+ * 
+ * i've commented out db.write operations so no one overwrites our db
  */
 
 import java.io.*;
@@ -58,6 +60,7 @@ public class CreateGenreFeatureDB {
 										"\n\t<loudness>" + curSampleData.getLoudness() + "</loudness>" +
 										"\n</sampledata>";
 								System.out.println("successfully got data for " + genres[genreIndex] + sampleIndex);
+								System.out.println(dataToWrite);
 								break;
 							} catch (EchoNestException e) {
 								e.printStackTrace();
@@ -66,15 +69,16 @@ public class CreateGenreFeatureDB {
 							}
 						}
 //						db.write(dataToWrite);
-						//					System.out.println("<sampledata>");
-						//					System.out.println("\t<name>"+genres[genreIndex]+sampleIndex+"</name>");
-						//					System.out.println("\t<tempo>" + curSampleData.getTempo() + "</tempo>");
-						//                    System.out.println("\t<danceability>" + curSampleData.getDanceability() + "</danceability>");
-						//                    System.out.println("\t<speechiness>" + curSampleData.getSpeechiness() + "</speechiness>");
-						//                    System.out.println("\t<liveness>" + curSampleData.getLiveness() + "</liveness>");
-						//                    System.out.println("\t<energy>" + curSampleData.getEnergy() + "</energy>");
-						//                    System.out.println("\t<loudness>" + curSampleData.getLoudness() + "</loudness>");
-						//                    System.out.println("</sampledata>");
+						
+//											System.out.println("<sampledata>");
+//											System.out.println("\t<name>"+genres[genreIndex]+sampleIndex+"</name>");
+//											System.out.println("\t<tempo>" + curSampleData.getTempo() + "</tempo>");
+//						                    System.out.println("\t<danceability>" + curSampleData.getDanceability() + "</danceability>");
+//						                    System.out.println("\t<speechiness>" + curSampleData.getSpeechiness() + "</speechiness>");
+//						                    System.out.println("\t<liveness>" + curSampleData.getLiveness() + "</liveness>");
+//						                    System.out.println("\t<energy>" + curSampleData.getEnergy() + "</energy>");
+//						                    System.out.println("\t<loudness>" + curSampleData.getLoudness() + "</loudness>");
+//						                    System.out.println("</sampledata>");
 					} else {
 						System.err.println("error with track analysis");
 					}
