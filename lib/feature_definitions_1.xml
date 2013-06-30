@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!DOCTYPE feature_key_file [
+   <!ELEMENT feature_key_file (comments, feature+)>
+   <!ELEMENT comments (#PCDATA)>
+   <!ELEMENT feature (name, description?, is_sequential, parallel_dimensions)>
+   <!ELEMENT name (#PCDATA)>
+   <!ELEMENT description (#PCDATA)>
+   <!ELEMENT is_sequential (#PCDATA)>
+   <!ELEMENT parallel_dimensions (#PCDATA)>
+]>
+
+<feature_key_file>
+
+   <comments></comments>
+
+	<feature>
+		<name>MFCC Overall Standard Deviation</name>
+		<description>MFCC calculations based upon Orange Cow code
+This is the overall standard deviation over all windows.</description>
+		<is_sequential>true</is_sequential>
+		<parallel_dimensions>13</parallel_dimensions>
+	</feature>
+	<feature>
+		<name>Derivative of MFCC Overall Standard Deviation</name>
+		<description>Derivative of MFCC.MFCC calculations based upon Orange Cow code
+This is the overall standard deviation over all windows.</description>
+		<is_sequential>true</is_sequential>
+		<parallel_dimensions>13</parallel_dimensions>
+	</feature>
+	<feature>
+		<name>Running Mean of MFCC Overall Standard Deviation</name>
+		<description>Running Mean of MFCC. MFCC calculations based upon Orange Cow code
+This is the overall standard deviation over all windows.</description>
+		<is_sequential>true</is_sequential>
+		<parallel_dimensions>13</parallel_dimensions>
+	</feature>
+	<feature>
+		<name>Standard Deviation of MFCC Overall Standard Deviation</name>
+		<description>Standard Deviation of MFCC.MFCC calculations based upon Orange Cow code
+This is the overall standard deviation over all windows.</description>
+		<is_sequential>true</is_sequential>
+		<parallel_dimensions>13</parallel_dimensions>
+	</feature>
+	<feature>
+		<name>Derivative of Running Mean of MFCC Overall Standard Deviation</name>
+		<description>Derivative of Running Mean of MFCC.Running Mean of MFCC. MFCC calculations based upon Orange Cow code
+This is the overall standard deviation over all windows.</description>
+		<is_sequential>true</is_sequential>
+		<parallel_dimensions>13</parallel_dimensions>
+	</feature>
+	<feature>
+		<name>Derivative of Standard Deviation of MFCC Overall Standard Deviation</name>
+		<description>Derivative of Standard Deviation of MFCC.Standard Deviation of MFCC.MFCC calculations based upon Orange Cow code
+This is the overall standard deviation over all windows.</description>
+		<is_sequential>true</is_sequential>
+		<parallel_dimensions>13</parallel_dimensions>
+	</feature>
+	<feature>
+		<name>MFCC Overall Average</name>
+		<description>MFCC calculations based upon Orange Cow code
+This is the overall average over all windows.</description>
+		<is_sequential>true</is_sequential>
+		<parallel_dimensions>13</parallel_dimensions>
+	</feature>
+	<feature>
+		<name>Derivative of MFCC Overall Average</name>
+		<description>Derivative of MFCC.MFCC calculations based upon Orange Cow code
+This is the overall average over all windows.</description>
+		<is_sequential>true</is_sequential>
+		<parallel_dimensions>13</parallel_dimensions>
+	</feature>
+	<feature>
+		<name>Running Mean of MFCC Overall Average</name>
+		<description>Running Mean of MFCC. MFCC calculations based upon Orange Cow code
+This is the overall average over all windows.</description>
+		<is_sequential>true</is_sequential>
+		<parallel_dimensions>13</parallel_dimensions>
+	</feature>
+	<feature>
+		<name>Standard Deviation of MFCC Overall Average</name>
+		<description>Standard Deviation of MFCC.MFCC calculations based upon Orange Cow code
+This is the overall average over all windows.</description>
+		<is_sequential>true</is_sequential>
+		<parallel_dimensions>13</parallel_dimensions>
+	</feature>
+	<feature>
+		<name>Derivative of Running Mean of MFCC Overall Average</name>
+		<description>Derivative of Running Mean of MFCC.Running Mean of MFCC. MFCC calculations based upon Orange Cow code
+This is the overall average over all windows.</description>
+		<is_sequential>true</is_sequential>
+		<parallel_dimensions>13</parallel_dimensions>
+	</feature>
+	<feature>
+		<name>Derivative of Standard Deviation of MFCC Overall Average</name>
+		<description>Derivative of Standard Deviation of MFCC.Standard Deviation of MFCC.MFCC calculations based upon Orange Cow code
+This is the overall average over all windows.</description>
+		<is_sequential>true</is_sequential>
+		<parallel_dimensions>13</parallel_dimensions>
+	</feature>
+</feature_key_file>
