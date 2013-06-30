@@ -6,9 +6,6 @@
  */
 
 import java.io.*;
-
-import sun.org.mozilla.javascript.internal.ast.CatchClause;
-
 import com.echonest.api.v4.*;
 
 public class CreateGenreFeatureDB {
@@ -19,9 +16,9 @@ public class CreateGenreFeatureDB {
 	public static void main(String[] args) throws IOException{
 		EchoNestAPI echonestAPI = new EchoNestAPI(echoNestApiKey);		
 		File curSample;
-		PrintWriter db = null;
-		db = new PrintWriter(new BufferedWriter(new FileWriter(new File("genres.db"),true)));
-		db.write("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>");
+//		PrintWriter db = null;
+//		db = new PrintWriter(new BufferedWriter(new FileWriter(new File("genres.db"),true)));
+//		db.write("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>");
 		for(int genreIndex = 0; genreIndex < numGenres; genreIndex++) {
 			for(int sampleIndex = 0; sampleIndex < samplesPerGenre; sampleIndex++) {
 				try {
@@ -40,9 +37,9 @@ public class CreateGenreFeatureDB {
 							curSampleData.waitForAnalysis(30000);				//overkill
 							if(curSampleData != null) break;
 						} catch (EchoNestException e) {
-							db.close();
+//							db.close();
 							Thread.sleep(30000);
-							db = new PrintWriter(new BufferedWriter(new FileWriter(new File("genres.db"),true)));
+//							db = new PrintWriter(new BufferedWriter(new FileWriter(new File("genres.db"),true)));
 						}
 					}
 
@@ -68,7 +65,7 @@ public class CreateGenreFeatureDB {
 								Thread.sleep(30000);
 							}
 						}
-						db.write(dataToWrite);
+//						db.write(dataToWrite);
 						//					System.out.println("<sampledata>");
 						//					System.out.println("\t<name>"+genres[genreIndex]+sampleIndex+"</name>");
 						//					System.out.println("\t<tempo>" + curSampleData.getTempo() + "</tempo>");
@@ -84,6 +81,6 @@ public class CreateGenreFeatureDB {
 				} catch (IOException | EchoNestException | NullPointerException | InterruptedException e) {e.printStackTrace();}
 			}
 		}
-		db.close();
+//		db.close();
 	}
 }
