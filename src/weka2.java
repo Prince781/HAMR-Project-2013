@@ -15,8 +15,7 @@ public class weka2{
 		Attribute thr = new Attribute("thr");
 		Attribute[] list = {one, two, thr};
 		
-		FastVector classVals = new FastVector(11);
-		ArrayList<String> temp = new ArrayList<String>();
+		FastVector<String> classVals = new FastVector<String>(11);
 		String[] tempArr = {"blues","classical","country","disco","hiphop","jazz","metal","pop","reggae","rock"};
 		//change tempArr to the genre array in CreateFeatureDB
 		for (String x: tempArr){
