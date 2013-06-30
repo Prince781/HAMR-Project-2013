@@ -45,19 +45,30 @@ public class CreateGenreFeatureDB {
 							db = new PrintWriter(new BufferedWriter(new FileWriter(new File("genres.db"),true)));
 						}
 					}
-					
+
 					if(curSampleData.getStatus() == Track.AnalysisStatus.COMPLETE) {
-						System.out.println("successfully got data for " + genres[genreIndex] + sampleIndex);
+						
 						String dataToWrite = "";
-						dataToWrite += "\n<sampledata>" + 
-								"\n\t<name>"+genres[genreIndex]+sampleIndex+"</name>" +
-								"\n\t<tempo>" + curSampleData.getTempo() + "</tempo>" + 
-								"\n\t<danceability>" + curSampleData.getDanceability() + "</danceability>" + 
-								"\n\t<speechiness>" + curSampleData.getSpeechiness() + "</speechiness>" + 
-								"\n\t<liveness>" + curSampleData.getLiveness() + "</liveness>" +
-								"\n\t<energy>" + curSampleData.getEnergy() + "</energy>" +
-								"\n\t<loudness>" + curSampleData.getLoudness() + "</loudness>" +
-								"\n</sampledata>";
+						while(true) {
+							try {
+								dataToWrite += "\n<sampledata>" + 
+										"\n\t<name>"+genres[genreIndex]+sampleIndex+"</name>" +
+										"\n\t<tempo>" + curSampleData.getTempo() + "</tempo>" + 
+										"\n\t<danceability>" + curSampleData.getDanceability() + "</danceability>" + 
+										"\n\t<speechiness>" + curSampleData.getSpeechiness() + "</speechiness>" + 
+										"\n\t<liveness>" + curSampleData.getLiveness() + "</liveness>" +
+										"\n\t<energy>" + curSampleData.getEnergy() + "</energy>" +
+										"\n\t<loudness>" + curSampleData.getLoudness() + "</loudness>" +
+										"\n</sampledata>";
+								System.out.println("successfully got data for " + genres[genreIndex] + sampleIndex);
+								break;
+							} catch (EchoNestException e) {
+								e.printStackTrace();
+								System.out.println("sleeping");
+								Thread.sleep(30000);
+							}
+						}
+						db.write(dataToWrite);
 						//					System.out.println("<sampledata>");
 						//					System.out.println("\t<name>"+genres[genreIndex]+sampleIndex+"</name>");
 						//					System.out.println("\t<tempo>" + curSampleData.getTempo() + "</tempo>");
@@ -67,7 +78,6 @@ public class CreateGenreFeatureDB {
 						//                    System.out.println("\t<energy>" + curSampleData.getEnergy() + "</energy>");
 						//                    System.out.println("\t<loudness>" + curSampleData.getLoudness() + "</loudness>");
 						//                    System.out.println("</sampledata>");
-						db.write(dataToWrite);
 					} else {
 						System.err.println("error with track analysis");
 					}
