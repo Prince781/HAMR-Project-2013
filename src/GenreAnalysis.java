@@ -2,6 +2,7 @@ import jAudioFeatureExtractor.jAudioTools.AudioSamples;
 import jAudioFeatureExtractor.AudioFeatures.*;
 
 import java.io.*;
+import java.util.HashMap;
 import java.util.Random;
 
 public class GenreAnalysis {
@@ -48,6 +49,20 @@ public class GenreAnalysis {
 		for (int i=0; i<data_set.length; i++) sum += data_set[i];
 		return sum/data_set.length;
 	}
+	public static void findClosest(HashMap<String, double[]> points, double[] val) {
+		//using Euclidean Distance, find the closest value
+		HashMap<String, Double> distances = new HashMap<String, Double>();
+		for (String genre:points.keySet()) {
+			double[] pnts = points.get(genre);
+			distances.put(genre, 
+					Math.sqrt(
+							Math.pow(pnts[0]-val[0], 2)
+						+	Math.pow(pnts[1]-val[1], 2)
+						+	Math.pow(pnts[2]-val[2], 2)
+					)
+			); //distance formula
+		}
+	}
 	public static void main(String[] args) throws Exception {
 		/* get genre information about the sample, and then compare it to
 		 * our database
@@ -63,7 +78,6 @@ public class GenreAnalysis {
 			mean(beatSum(samples, as.getSamplingRateAsDouble())),
 			mean(spectralCentroid(samples, as.getSamplingRateAsDouble())) 
 		};
-		GenreDB.createDB();
 		
 		//debug
 		System.out.println("Our song: ");
