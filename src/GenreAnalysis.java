@@ -8,7 +8,7 @@ import java.util.Random;
 public class GenreAnalysis {
 	private static final boolean optimize = false;
 		//whether or not to optimize the process
-	private static final double clipLength = 3.0;
+	private static final double clipLength = 15.0;
 		/* the maximum clip length of the taken sample from
 		 * our example audio source
 		 */
@@ -54,20 +54,34 @@ public class GenreAnalysis {
 		HashMap<String, Double> distances = new HashMap<String, Double>();
 		for (String genre:points.keySet()) {
 			double[] pnts = points.get(genre);
-			distances.put(genre, 
-					Math.sqrt(
+			distances.put(genre,
+					new Double(Math.sqrt(
 							Math.pow(pnts[0]-val[0], 2)
 						+	Math.pow(pnts[1]-val[1], 2)
 						+	Math.pow(pnts[2]-val[2], 2)
-					)
-			); //distance formula
+					))
+			); //distance formula in three dimensions
 		}
+		//sort the distances hashmap according to distances
+		boolean next = true;
+		for (String n:distances.keySet()) {
+			next = false; //set false by default
+			for (String o:distances.keySet())
+				if (distances.get(o) < distances.get(n)) {
+					next = true;
+					n = o;
+					break;
+				}
+			if (!next)
+				System.out.println(n+": distance of "+distances.get(n));
+		}
+		
 	}
 	public static void main(String[] args) throws Exception {
 		/* get genre information about the sample, and then compare it to
 		 * our database
 		 */
-		AudioSamples as = new AudioSamples(new File("sound/fireflies.wav"), "Demo Sound", false);
+		AudioSamples as = new AudioSamples(new File("sound/hiphop.00001.au"), "Demo Sound", false);
 		double endClip = clipLength + (new Random()).nextDouble()*(as.getDuration()-clipLength);
 			//speed tweak: only compare a few seconds of the song, at random
 		as.normalize(); //normalize the audio: combine channels into one
@@ -83,6 +97,8 @@ public class GenreAnalysis {
 		System.out.println("Our song: ");
 		for (double n:averages) System.out.print(n+", ");
 		System.out.println();
+		GenreDB.createDB();
+		findClosest(GenreDB.genreVals, averages);
 		//TODO: System.out.println(<<<guessed genre>>>);
 	}
 }

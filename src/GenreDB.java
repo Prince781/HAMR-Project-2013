@@ -5,12 +5,12 @@ import jAudioFeatureExtractor.AudioFeatures.*;
 import jAudioFeatureExtractor.jAudioTools.*;
 
 public class GenreDB {
-	private static final double sampleCount = 3.0;
+	private static final int sampleCount = 3;
 	private static String[] genres = {
 		"blues", "classical", "country", "disco", "hiphop",
 		"jazz", "metal", "pop", "reggae", "rock"
 	};
-	private static HashMap<String, double[]> genreVals  = new HashMap<String, double[]>();
+	public static HashMap<String, double[]> genreVals  = new HashMap<String, double[]>();
 		//a hashmap containing information regarding the average values for each
 		//particular genre
 	public static void printGenreValues() {
