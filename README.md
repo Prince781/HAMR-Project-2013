@@ -29,4 +29,4 @@ Through the analysis of qualitative musical characteristics, an accurate guess f
 Original abstract [here](https://docs.google.com/document/d/1QoTRFzYsAdKLGDw8dEG460pqgEuyAR_iNE0yy5v7zOg/edit?usp=sharing).
 
 ####Notes
-Genre samples taken from the [GTZAN genre collection](http://marsyas.info/download/data_sets/) data set
+Genre samples taken from the [GTZAN genre collection](http://marsyas.info/download/data_sets/)
