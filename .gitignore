@@ -1,5 +1,7 @@
-/.project
-/.classpath
-/bin
-/genresamples
-/.DS_Store
+.project
+.classpath
+bin/
+genresamples/
+.DS_Store
+lib/Weka/doc
+.gitignore
