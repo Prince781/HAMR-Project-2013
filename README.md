@@ -27,3 +27,6 @@ Note: while they're unlikely to be used, other programming languages might have 
 Through the analysis of qualitative musical characteristics, an accurate guess for genre will be determined. It is suspected that this approach will allow for improvements in the quality of song recommendations. This is going to be accomplished with the use of MIDI audio input, a cross-platform programming language, as well as audio processing APIs. Through our pursuit in this goal, we hope to gain knowledge through the necessary research relating to machine learning and programmatic music analysis.
 
 Original abstract [here](https://docs.google.com/document/d/1QoTRFzYsAdKLGDw8dEG460pqgEuyAR_iNE0yy5v7zOg/edit?usp=sharing).
+
+####Notes
+Genre samples taken from the [GTZAN genre collection](http://marsyas.info/download/data_sets/) data set
